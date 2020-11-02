@@ -5,7 +5,8 @@ trait Logger {
 }
 
 trait ConsoleLogger {
-  def log(msg: String): Unit = { println(msg) }
+  private var c = 0; // counts the log messages
+  def log(msg: String): Unit = { println(s"$c: $msg"); c += 1 }
 }
 
 trait Cloneable {
